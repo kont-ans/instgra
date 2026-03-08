@@ -368,6 +368,29 @@ def main():
             bot.run_schedule()
         except KeyboardInterrupt:
             print("\n👋 تم إيقاف البوت بواسطة المستخدم")
+            # إضافة خادم ويب بسيط لإبقاء البوت نشطاً على Koyeb
+import threading
+from http.server import HTTPServer, BaseHTTPRequestHandler
+
+class HealthCheckHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header('Content-type', 'text/html')
+        self.end_headers()
+        self.wfile.write(b'Bot is running!')
+    
+    def log_message(self, format, *args):
+        # إلغاء التسجيل لتجنب الإزعاج
+        pass
+
+def run_health_server():
+    server = HTTPServer(('0.0.0.0', 8080), HealthCheckHandler)
+    server.serve_forever()
+
+# تشغيل خادم الصحة في خيط منفصل
+health_thread = threading.Thread(target=run_health_server, daemon=True)
+health_thread.start()
+print("🌐 Health check server started on port 8080")
 
 if __name__ == "__main__":
     main()
