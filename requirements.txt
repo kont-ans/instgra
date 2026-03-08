@@ -1,0 +1,5 @@
+instaloader==4.11
+schedule==1.2.0
+selenium==4.15.0
+instapy-cli==0.0.12
+python-dotenv==1.0.0
