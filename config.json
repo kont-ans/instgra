@@ -1,0 +1,11 @@
+{
+    "instagram_username": "ux000password",
+    "instagram_password": "kont0983639951ans@",
+    "target_pages": [
+        "bear.75801643",
+        "alexa.khan0",
+        "mia_eclips"
+    ],
+    "headless_mode": false,
+    "max_videos_per_run": 3
+}
