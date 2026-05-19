@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultra Download - منصة التحميل الذكية</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="initial-state">
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <div class="sidebar-header">
+            <button id="close-sidebar" class="close-btn"><i class="fas fa-times"></i></button>
+            <h3>القائمة</h3>
+        </div>
+        <div class="sidebar-content">
+            <a href="https://t.me/i_mmx" target="_blank" class="dev-link">
+                <i class="fab fa-telegram blue-icon"></i> المطور
+            </a>
+            <a href="https://t.me/ULTRA_CODE_1/" target="_blank" class="dev-link">
+                <i class="fab fa-telegram blue-icon"></i> قناة المطور
+            </a>
+        </div>
+    </div>
+
+    <!-- Intro Animation Overlay -->
+    <div id="intro-overlay">
+        <h1 class="intro-logo">Ultra <span>Download</span></h1>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-wrapper hidden-initially">
+        <header class="header-section">
+            <button id="open-sidebar" class="menu-btn"><i class="fas fa-bars"></i></button>
+            <h1 class="logo">Ultra <span>Download</span></h1>
+            <p class="tagline">بساطة التحميل، فخامة الأداء</p>
+        </header>
+
+        <section class="search-container">
+            <div class="input-wrapper">
+                <input type="text" id="video-url" placeholder="الصق الرابط هنا..." autocomplete="off">
+                <button id="download-btn">
+                    <span id="btn-text">تحميل</span>
+                    <div id="btn-loader" class="hidden">
+                        <i class="fas fa-circle-notch fa-spin"></i>
+                    </div>
+                </button>
+            </div>
+        </section>
+
+        <section id="results-container" class="hidden">
+            <div class="content-card">
+                <h2 id="video-title">عنوان المحتوى</h2>
+                
+                <div class="action-buttons">
+                    <button id="show-video-options" class="action-btn video-btn">
+                        <i class="fas fa-video"></i> تحميل فيديو
+                    </button>
+                    <button id="show-audio-options" class="action-btn audio-btn">
+                        <i class="fas fa-music"></i> تحميل صوت
+                    </button>
+                </div>
+
+                <div id="video-options" class="options-list hidden">
+                    <h3>اختر دقة الفيديو:</h3>
+                    <div id="video-links" class="links-grid"></div>
+                </div>
+
+                <div id="audio-options" class="options-list hidden">
+                    <h3>اختر جودة الصوت:</h3>
+                    <div id="audio-links" class="links-grid"></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="minimal-footer">
+            <p>كل الحقوق محفوظة للمطور أبو فارس</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
